@@ -9,16 +9,16 @@
       <mat-list-item class="list-item" [routerLink]="['/explore']" routerLinkActive="active" (click)="drawer.toggle()">Explore Events</mat-list-item>
       <mat-divider></mat-divider>
       <mat-list-item class="list-item" [routerLink]="['/create-event']" routerLinkActive="active" (click)="drawer.toggle()">Create Event</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item class="list-item" [routerLink]="['/events']" routerLinkActive="active" (click)="drawer.toggle()">Events</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item class="list-item" [routerLink]="['/profile']" routerLinkActive="active" (click)="drawer.toggle()">My Profile</mat-list-item>
+      <mat-divider *ngIf="isAuth"></mat-divider>
+      <mat-list-item *ngIf="isAuth" class="list-item" [routerLink]="['/events']" routerLinkActive="active" (click)="drawer.toggle()">Events</mat-list-item>
+      <mat-divider *ngIf="isAuth"></mat-divider>
+      <mat-list-item *ngIf="isAuth" class="list-item" [routerLink]="['/profile']" routerLinkActive="active" (click)="drawer.toggle()">My Profile</mat-list-item>
     </mat-list>
   </mat-drawer>
   <mat-drawer-content>
     <mat-toolbar color="primary">
       <mat-icon class="example-icon" (click)="drawer.toggle()">menu</mat-icon>
-      <span>MeetME</span>
+      <span>MEET ME</span>
     </mat-toolbar>
     <div class="router-outlet-container">
       <router-outlet></router-outlet>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from "../core/auth.service";
 
 @Component({
@@ -6,20 +6,26 @@ import { AuthService } from "../core/auth.service";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   constructor(private auth: AuthService) { }
 
   signIn() {
     this.auth.googleSignIn().then(res => {
-      console.log(res)
+      console.log(res.user, res.additionalUserInfo)
     })
     .catch(err => {
       console.warn(err)
     })
+    .then(() => {
+      this.auth.authState().subscribe(res => {
+        console.log("AuthState", res)
+      })
+    })
   }
 
-  ngOnInit() {
+  logOut() {
+    this.auth.logOut()
   }
 
 }

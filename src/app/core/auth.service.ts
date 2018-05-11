@@ -29,4 +29,8 @@ export class AuthService {
     return this.afAuth.authState
   }
   
+  updateUser(user) {
+    return this.afAuth.auth.updateCurrentUser(user)
+  }
+  
 }
