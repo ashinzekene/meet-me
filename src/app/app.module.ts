@@ -5,6 +5,10 @@ import { NgModule } from '@angular/core';
 import { RoutingModule } from "./app-router.module";
 import { AppComponent } from './app.component';
 import { CoreModule } from "./core/core.module";
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { environment } from '../environments/environment';
 
 import { HomeComponent } from './home/home.component';
 import { CreateEventComponent } from './create-event/create-event.component';
@@ -27,6 +31,9 @@ import { EventComponent } from './event/event.component';
     BrowserModule,
     RoutingModule,
     NoopAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase, 'ashinzekene-meet-me'),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
     CoreModule
   ],
   providers: [],

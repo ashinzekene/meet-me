@@ -4,6 +4,8 @@
       <span [routerLink]="['/']">Menu</span>
     </mat-toolbar>
     <mat-list>
+      <mat-list-item class="list-item" [routerLink]="['/']" routerLinkActive="active" (click)="drawer.toggle()">Home</mat-list-item>
+      <mat-divider></mat-divider>
       <mat-list-item class="list-item" [routerLink]="['/explore']" routerLinkActive="active" (click)="drawer.toggle()">Explore Events</mat-list-item>
       <mat-divider></mat-divider>
       <mat-list-item class="list-item" [routerLink]="['/create-event']" routerLinkActive="active" (click)="drawer.toggle()">Create Event</mat-list-item>
