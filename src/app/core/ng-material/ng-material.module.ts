@@ -7,7 +7,12 @@ import {
   MatIconModule,
   MatListModule,
   MatDividerModule,
-  MatCardModule
+  MatCardModule,
+  MatExpansionModule,
+  MatDatepickerModule,
+  MatFormFieldModule,
+  MatNativeDateModule,
+  MatInputModule
 } from '@angular/material';
 
 const MATERIAL_MODULES = [
@@ -17,6 +22,11 @@ const MATERIAL_MODULES = [
   MatToolbarModule,
   MatIconModule,
   MatListModule,
+  MatExpansionModule,
+  MatDatepickerModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatNativeDateModule,
   MatCardModule,
   MatDividerModule
 ]

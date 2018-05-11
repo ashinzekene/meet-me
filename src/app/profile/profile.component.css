@@ -1,0 +1,19 @@
+.profile-image {
+  width: 80%;
+  padding-bottom: 80%;
+  margin: 10px auto;
+  height: 0;
+  position: relative;
+}
+.profile-image img {
+  border-radius: 50%; 
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.full-width {
+  width: 100%
+}
+.m-1 {
+  margin: 10px
+}
