@@ -1,0 +1,13 @@
+mat-icon {
+  padding: 6px;
+}
+mat-drawer-container {
+  height: 100%;
+}
+.router-outlet-container {
+  padding: 4px;
+}
+.list-item {
+  padding-right: 30px;
+  padding-left: 20px;
+}

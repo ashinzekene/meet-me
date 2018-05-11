@@ -122,6 +122,46 @@
           }
         }
       }
+    },
+    "angular-media-query": {
+      "root": "projects/angular-media-query",
+      "sourceRoot": "projects/angular-media-query/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/angular-media-query/tsconfig.lib.json",
+            "project": "projects/angular-media-query/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/angular-media-query/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-media-query/src/test.ts",
+            "tsConfig": "projects/angular-media-query/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-media-query/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-media-query/tsconfig.lib.json",
+              "projects/angular-media-query/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "meet-me"
