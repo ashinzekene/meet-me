@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { MEvent } from '../types/m-event';
 
 @Component({
   selector: 'app-create-event',
@@ -7,14 +7,8 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./create-event.component.css']
 })
 export class CreateEventComponent implements OnInit {
+  newEvent: Partial<MEvent> = {}
 
-  newEvent: any = {}
-
-  firstFormGroup: FormGroup = new FormGroup({
-    firstCtrl: new FormControl(),
-    secondCtrl: new FormControl(),
-  })
-  
   constructor() { }
 
   ngOnInit() {

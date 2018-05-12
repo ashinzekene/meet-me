@@ -1,8 +1,9 @@
-import { User } from "firebase";
+import { UserInfo } from "firebase";
 
-export interface MUser extends User {
+export interface MUser extends UserInfo {
   githubUsername?: string
   facebookUsername?: string
   url?: string
   phone?: string
+  emailVerified?: boolean
 }

@@ -6,7 +6,7 @@
         <mat-step [stepControl]="firstFormGroup">
           <ng-template matStepLabel>Event Details</ng-template>
           <mat-form-field>
-            <input matInput placeholder="Name of event" name="tagline" [(ngModel)]="newEvent.tagline" required>
+            <input matInput placeholder="Name of event" name="name" [(ngModel)]="newEvent.name" required>
           </mat-form-field>
           <mat-form-field>
             <input matInput placeholder="Tagline" name="tagline" [(ngModel)]="newEvent.tagline" required>
@@ -21,19 +21,6 @@
             <textarea matInput placeholder="Description" name="description" [(ngModel)]="newEvent.description" required></textarea>
           </mat-form-field>
           <div>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </mat-step>
-        <mat-step [stepControl]="secondFormGroup">
-          <ng-template matStepLabel>Event Speakers</ng-template>
-          <mat-form-field>
-            <input matInput placeholder="Speaker" name="speaker" [(ngModel)]="newEvent.speaker" required>
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput placeholder="Speaker" name="speaker1" [(ngModel)]="newEvent.speaker1" required>
-          </mat-form-field>
-          <div class="justify-space-around">
-            <button mat-button matStepperPrevious>Back</button>
             <button mat-button matStepperNext>Next</button>
           </div>
         </mat-step>

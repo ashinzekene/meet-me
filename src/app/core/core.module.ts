@@ -5,12 +5,13 @@ import { CommonModule } from "@angular/common";
 import { MainComponent } from "./main/main.component";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './auth.service';
-import { DatabaseService } from './database.service';
+import { UserService } from './user.service';
+import { EventService } from './event.service';
 
 @NgModule({
   imports: [NgMaterialModule, CommonModule, FormsModule, ReactiveFormsModule],
   exports: [NgMaterialModule, CommonModule, FormsModule, ReactiveFormsModule],
   declarations: [MainComponent],
-  providers: [AuthService, DatabaseService],
+  providers: [AuthService, UserService, EventService],
 })
 export class CoreModule { }
