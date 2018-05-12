@@ -1,6 +1,6 @@
 <div class="create-event">
   <div class="container">
-    <h2>CREATING A NEW EVENT</h2>
+    <h2 class="mat-title main-title">CREATING A NEW EVENT</h2>
     <form #newEvent="ngForm">
       <mat-horizontal-stepper #stepper>
         <mat-step [stepControl]="firstFormGroup">
@@ -32,7 +32,7 @@
           <mat-form-field>
             <input matInput placeholder="Speaker" name="speaker1" [(ngModel)]="newEvent.speaker1" required>
           </mat-form-field>
-          <div>
+          <div class="justify-space-around">
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button matStepperNext>Next</button>
           </div>
@@ -49,7 +49,7 @@
             <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
             <mat-datepicker #endDate></mat-datepicker>
           </mat-form-field>
-          <div>
+          <div class="justify-space-around">
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button matStepperNext>Next</button>
           </div>

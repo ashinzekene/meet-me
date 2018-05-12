@@ -1,6 +1,14 @@
+.main-title {
+  padding: 15px 5px 0px;
+  text-align: center;
+}
 mat-form-field {
   margin: auto;
   width: 80%;
   max-width: 400px;
   display: block; 
+}
+.justify-space-around {
+  display: flex;
+  justify-content: space-around;
 }
