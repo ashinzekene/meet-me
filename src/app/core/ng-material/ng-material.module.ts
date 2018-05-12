@@ -12,7 +12,8 @@ import {
   MatDatepickerModule,
   MatFormFieldModule,
   MatNativeDateModule,
-  MatInputModule
+  MatInputModule,
+  MatStepperModule
 } from '@angular/material';
 
 const MATERIAL_MODULES = [
@@ -28,7 +29,9 @@ const MATERIAL_MODULES = [
   MatInputModule,
   MatNativeDateModule,
   MatCardModule,
-  MatDividerModule
+  MatDividerModule,
+  MatStepperModule,
+  MatDatepickerModule,
 ]
 
 @NgModule({

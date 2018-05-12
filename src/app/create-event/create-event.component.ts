@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-create-event',
@@ -7,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateEventComponent implements OnInit {
 
+  newEvent: any = {}
+
+  firstFormGroup: FormGroup = new FormGroup({
+    firstCtrl: new FormControl(),
+    secondCtrl: new FormControl(),
+  })
+  
   constructor() { }
 
   ngOnInit() {
