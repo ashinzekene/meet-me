@@ -5,3 +5,13 @@ body {
   height: 100vh;
   overflow-y: scroll;
 }
+
+.justify-space-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.justify-space-between {
+  display: flex;
+  justify-content: space-between;
+}

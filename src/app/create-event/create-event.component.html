@@ -1,10 +1,11 @@
 <div class="create-event">
-  <div class="container">
-    <h2 class="mat-title main-title">CREATING A NEW EVENT</h2>
-    <form #newEvent="ngForm">
-      <mat-horizontal-stepper #stepper>
-        <mat-step [stepControl]="firstFormGroup">
-          <ng-template matStepLabel>Event Details</ng-template>
+  <mat-progress-bar *ngIf="isCreating" mode="query"></mat-progress-bar>
+  <h2 class="mat-title main-title">CREATING A NEW EVENT</h2>
+  <form #newEvent="ngForm">
+    <mat-horizontal-stepper #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <ng-template matStepLabel>Event Details</ng-template>
+        <div class="container">
           <mat-form-field>
             <input matInput placeholder="Name of event" name="name" [(ngModel)]="newEvent.name" required>
           </mat-form-field>
@@ -12,7 +13,7 @@
             <input matInput placeholder="Tagline" name="tagline" [(ngModel)]="newEvent.tagline" required>
           </mat-form-field>
           <mat-form-field>
-            <input matInput placeholder="Imgaeurl" name="imageUrl" [(ngModel)]="newEvent.imageUrl" required>
+            <input matInput placeholder="Imageurl" name="imageUrl" [(ngModel)]="newEvent.imageUrl" required>
           </mat-form-field>
           <mat-form-field>
             <input matInput placeholder="Location" name="location" [(ngModel)]="newEvent.location" required>
@@ -21,35 +22,30 @@
             <textarea matInput placeholder="Description" name="description" [(ngModel)]="newEvent.description" required></textarea>
           </mat-form-field>
           <div>
-            <button mat-button matStepperNext>Next</button>
+            <button style="float: right;" mat-button matStepperNext>Next</button>
           </div>
-        </mat-step>
-        <mat-step [stepControl]="secondFormGroup">
-          <ng-template matStepLabel>Event Date and Time</ng-template>
+        </div>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <ng-template matStepLabel>Event Date and Time</ng-template>
+        <div class="container">
           <mat-form-field>
-            <input matInput [matDatepicker]="startDate" placeholder="Choose a date">
+            <input matInput [min]="dateToday" [ngModel]="newEvent.startDate" name="startDate" [matDatepicker]="startDate" placeholder="Choose a date">
             <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
             <mat-datepicker #startDate></mat-datepicker>
           </mat-form-field>
           <mat-form-field>
-            <input matInput [matDatepicker]="endDate" placeholder="Choose a date">
-            <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
-            <mat-datepicker #endDate></mat-datepicker>
+            <input matInput appTimeValidator="ted" [ngModel]="newEvent.startTime" name="startTime" placeholder="Start Time hh:mm">
           </mat-form-field>
-          <div class="justify-space-around">
+          <mat-form-field>
+            <input matInput appTimeValidator="ted" [ngModel]="newEvent.endTime" name="endTime" placeholder="End Time hh:mm">
+          </mat-form-field>
+          <div class="justify-space-between">
             <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button (click)="createEvent">Create Event</button>
           </div>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Done</ng-template>
-          You are now done.
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
-          </div>
-        </mat-step>
-      </mat-horizontal-stepper>
-    </form>
-  </div>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </form>
 </div>

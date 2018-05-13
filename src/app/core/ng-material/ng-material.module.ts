@@ -14,7 +14,8 @@ import {
   MatNativeDateModule,
   MatInputModule,
   MatStepperModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatProgressBarModule
 } from '@angular/material';
 
 const MATERIAL_MODULES = [
@@ -34,6 +35,7 @@ const MATERIAL_MODULES = [
   MatStepperModule,
   MatDatepickerModule,
   MatSnackBarModule,
+  MatProgressBarModule
 ]
 
 @NgModule({

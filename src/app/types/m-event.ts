@@ -5,7 +5,10 @@ export type MEvent = {
   description: string
   tagline: string
   startDate: Date
-  endDate: Date
+  startTime: string
+  endTime: string
+  imageUrl: string
   location: string
-  checkInUsers: MUser[]
+  endDate?: Date
+  checkedInUsers?: MUser[]
 }

@@ -11,10 +11,12 @@ import { MatSnackBar } from '@angular/material';
 })
 export class ProfileComponent implements OnInit {
   user: Partial<MUser> = {}
-
+  isCreating: boolean = false
+  
   constructor(private auth: AuthService, private userDB: UserService, private snackbar: MatSnackBar) { }
 
   async updateProfile() {
+    this.isCreating = true
     try {
       await this.userDB.create(this.user)
       this.snackbar.open("Updated your profile", "Done", {
@@ -23,6 +25,7 @@ export class ProfileComponent implements OnInit {
     } catch (err) {
       console.log("Could not update", err)
     }
+    this.isCreating = false    
   }
 
   ngOnInit() {

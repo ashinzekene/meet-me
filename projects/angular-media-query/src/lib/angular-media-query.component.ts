@@ -3,9 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'lib-angular-media-query',
   template: `
-    <p>
-      angular-media-query works!
-    </p>
+   <ng-content></ng-content>
   `,
   styles: []
 })
