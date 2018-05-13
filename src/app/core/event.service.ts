@@ -11,18 +11,21 @@ export class EventService {
   events: Observable<MEvent[]>
   event: Observable<MEvent>
   
-  constructor(private afs: AngularFirestore) { }
+  constructor(private afs: AngularFirestore) {
+    this.afs.firestore.settings({timestampsInSnapshots: true})    
+  }
 
-  create(event: Partial<MEvent>): Promise<void> {
-    return this.afs.collection('events').doc<Partial<MEvent>>(event.name.replace(' ', '-')).set(event)
+  create(newEvent: Partial<MEvent>): Promise<void> {
+    console.log("Event", newEvent)
+    return this.afs.collection('events').doc<Partial<MEvent>>(newEvent.name.replace(' ', '-')).set(newEvent)
   }
 
   get(id: string) {
     return this.afs.collection('events').doc<MEvent>(id).valueChanges()
   }
 
-  update(id: string, event: Partial<MEvent>): Promise<void> {
-    return this.afs.collection('events').doc(id).update(event)
+  update(id: string, newEvent: Partial<MEvent>): Promise<void> {
+    return this.afs.collection('events').doc(id).update(newEvent)
   }
   
   delete(id: string): Promise<void> {

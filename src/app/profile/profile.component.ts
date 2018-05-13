@@ -16,6 +16,9 @@ export class ProfileComponent implements OnInit {
   constructor(private auth: AuthService, private userDB: UserService, private snackbar: MatSnackBar) { }
 
   async updateProfile() {
+    if (this.isCreating) {
+      return
+    }
     this.isCreating = true
     try {
       await this.userDB.create(this.user)

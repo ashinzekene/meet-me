@@ -27,6 +27,9 @@ export class CreateEventComponent implements OnInit, OnDestroy {
   }
 
   async createEvent() {
+    if (this.isCreating) {
+      return
+    }
     this.isCreating = true
     try {
       await this.eventDB.create(this.newEvent)
@@ -38,6 +41,7 @@ export class CreateEventComponent implements OnInit, OnDestroy {
       this.snackbar.open("Could not create event", "Done", {
         duration: 2000
       })
+      console.log(err)
     }
     this.isCreating = false
   }

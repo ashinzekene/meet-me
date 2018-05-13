@@ -1,7 +1,7 @@
 <div class="create-event">
   <mat-progress-bar *ngIf="isCreating" mode="query"></mat-progress-bar>
   <h2 class="mat-title main-title">CREATING A NEW EVENT</h2>
-  <form #newEvent="ngForm">
+  <form #newEventForm="ngForm">
     <mat-horizontal-stepper #stepper>
       <mat-step [stepControl]="firstFormGroup">
         <ng-template matStepLabel>Event Details</ng-template>
@@ -30,19 +30,19 @@
         <ng-template matStepLabel>Event Date and Time</ng-template>
         <div class="container">
           <mat-form-field>
-            <input matInput [min]="dateToday" [ngModel]="newEvent.startDate" name="startDate" [matDatepicker]="startDate" placeholder="Choose a date">
+            <input matInput [min]="dateToday" [(ngModel)]="newEvent.startDate" name="startDate" [matDatepicker]="startDate" placeholder="Choose a date">
             <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
             <mat-datepicker #startDate></mat-datepicker>
           </mat-form-field>
           <mat-form-field>
-            <input matInput appTimeValidator="ted" [ngModel]="newEvent.startTime" name="startTime" placeholder="Start Time hh:mm">
+            <input matInput appTimeValidator="ted" [(ngModel)]="newEvent.startTime" name="startTime" placeholder="Start Time hh:mm">
           </mat-form-field>
           <mat-form-field>
-            <input matInput appTimeValidator="ted" [ngModel]="newEvent.endTime" name="endTime" placeholder="End Time hh:mm">
+            <input matInput appTimeValidator="ted" [(ngModel)]="newEvent.endTime" name="endTime" placeholder="End Time hh:mm">
           </mat-form-field>
           <div class="justify-space-between">
             <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="createEvent">Create Event</button>
+            <button mat-raised-button color="secondary" (click)="createEvent()">Create Event</button>
           </div>
         </div>
       </mat-step>
