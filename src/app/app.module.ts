@@ -15,7 +15,6 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import { EventsComponent } from './events/events.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ExploreComponent } from './explore/explore.component';
-import { EventComponent } from './event/event.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { EventComponent } from './event/event.component';
     EventsComponent,
     ProfileComponent,
     ExploreComponent,
-    EventComponent,
   ],
   imports: [
     BrowserModule,

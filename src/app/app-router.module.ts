@@ -6,14 +6,13 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import { EventsComponent } from './events/events.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ExploreComponent } from './explore/explore.component';
-import { EventComponent } from './event/event.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'create-event', component: CreateEventComponent },
   { path: 'events', component: EventsComponent },
-  { path: 'event/:name', component: EventComponent },
+  { path: 'event/:id', loadChildren: 'app/event/event.module#EventModule' },
   { path: 'explore', component: ExploreComponent },
   { path: 'profile', component: ProfileComponent },
 ];
