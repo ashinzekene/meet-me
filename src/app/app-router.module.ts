@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'create-event', component: CreateEventComponent },
   { path: 'events', component: EventsComponent },
-  { path: 'event/:id', loadChildren: 'app/event/event.module#EventModule' },
+  { path: 'event/:id', loadChildren: './event/event.module#EventModule' },
   { path: 'explore', component: ExploreComponent },
   { path: 'profile', component: ProfileComponent },
 ];

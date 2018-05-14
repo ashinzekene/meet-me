@@ -7,6 +7,7 @@ import { NgMaterialModule } from '../core/ng-material/ng-material.module';
 @NgModule({
   imports: [
     CommonModule,
+    NgMaterialModule,
     EventRoutingModule,
   ],
   declarations: [EventComponent]

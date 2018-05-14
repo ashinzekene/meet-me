@@ -5,7 +5,7 @@ import { EventComponent } from './event/event.component';
 import { EventResolverService } from './event-resolver.service';
 
 const routes: Routes = [
-  { path: '', resolve: EventResolverService, component: EventComponent },
+  { path: '', component: EventComponent },
 ];
 
 @NgModule({
@@ -13,5 +13,3 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class EventRoutingModule { }
-
-// export const routedComponents = [EventComponent];
