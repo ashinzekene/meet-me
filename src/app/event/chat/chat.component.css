@@ -1,0 +1,7 @@
+.message-area {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  padding: 12px 10px 0px;
+  box-shadow: 2px -1px 14px 1px rgba(0, 0, 0, 0.2);
+}

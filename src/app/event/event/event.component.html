@@ -1,4 +1,4 @@
-<div class="event">
+<div *ngIf="1==0" class="event">
   <div class="display-3">{{ eventName }}</div>
 
   <div class="container">
@@ -7,7 +7,11 @@
       <mat-chip color="primary">Two fish</mat-chip>
       <mat-chip color="primary" selected="true">Primary fish</mat-chip>
       <mat-chip color="accent" selected="true">Accent fish</mat-chip>
-    </mat-chip-list>    
+    </mat-chip-list>
   </div>
   
+</div>
+
+<div class="event">
+  <app-chat></app-chat>
 </div>
