@@ -1,9 +1,11 @@
 <div class="chat-component">
-  <chat-message *ngFor="let msg of messages">{{ msg.message }}</chat-message>
+  <div class="chat-message-area">
+    <chat-message [isUser]="msg.isUser" *ngFor="let msg of messages">{{ (msg.isUser ? "Yes ": "No ") + msg.message }}</chat-message>
+  </div>
   <div class="message-area">
     <mat-form-field style="width: 98%">
-      <input matInput [(ngModel)]="message" placeholder="Type in your message" name="name">
-      <mat-icon matSuffix (keyDown)="checkForEnter()" (click)="sendMessage()">send</mat-icon>
+      <input matInput (keypress)="checkForEnter($event)" [(ngModel)]="message" placeholder="Type in your message" name="name">
+      <mat-icon matSuffix (click)="sendMessage()">send</mat-icon>
     </mat-form-field>
   </div>
 </div>
