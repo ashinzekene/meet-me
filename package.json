@@ -28,7 +28,7 @@
     "firebase": "^5.0.2",
     "pusher-js": "^4.2.2",
     "rxjs": "^6.0.0",
-    "rxjs-compat": "^6.1.0",
+    "rxjs-compat": "^6.5.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
